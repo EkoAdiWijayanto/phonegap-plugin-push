@@ -223,6 +223,13 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         gForeground = true;
+
+        Log.v(LOG_TAG, "EAW Initialize");
+        
+        final NotificationManager notificationManager = (NotificationManager) cordova.getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
+        
+        
     }
 
     @Override
@@ -241,6 +248,11 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
     public void onResume(boolean multitasking) {
         super.onResume(multitasking);
         gForeground = true;
+
+        Log.v(LOG_TAG, "EAW Initialize");
+        
+        final NotificationManager notificationManager = (NotificationManager) cordova.getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
     }
 
     @Override
